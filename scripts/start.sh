@@ -29,7 +29,7 @@ ln -s ${DATA_DIR}/ /home/${USER}
 chown -R ${UID}:${GID} /home/${USER}
 
 term_handler() {
-    kill -SIGINT "$(pidof FreeFileSync)"
+    kill -TERM "$(pidof FreeFileSync)"
     tail --pid="$(pidof FreeFileSync)" -f 2>/dev/null
     exit 143;
 }
