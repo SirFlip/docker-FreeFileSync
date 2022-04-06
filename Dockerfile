@@ -42,7 +42,7 @@ RUN mkdir $DATA_DIR && \
 	chown -R $USER $DATA_DIR && \
 	ulimit -n 2048 && \
 	echo "$USER ALL=(root) NOPASSWD:/bin/mount" >> /etc/sudoers && \
-    echo "$USER ALL=($USER) NOPASSWD:/bin/sh" >> /etc/sudoers
+    echo "$USER ALL=($USER) NOPASSWD:ALL" >> /etc/sudoers
 
 ADD /scripts/ /opt/scripts/
 COPY /icons/* /usr/share/novnc/app/images/icons/

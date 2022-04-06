@@ -2,7 +2,7 @@
 export DISPLAY=:99
 export XAUTHORITY=${DATA_DIR}/.Xauthority
 DL_V=$(echo "${DL_URL}" | cut -d '_' -f 2)
-CUR_V="$(find $DATA_DIR -name freefilesync-* | cut -d '-' -f 2)"
+CUR_V="$(find $DATA_DIR -maxdepth 1 -name freefilesync-* | cut -d '-' -f 2)"
 
 echo "---Checking for FreeFileSync---"
 if [ "$DL_V" == "$CUR_V" ]; then
