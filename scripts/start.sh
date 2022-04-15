@@ -25,7 +25,7 @@ find /var/run/mount.davfs -name "*.pid" -exec rm -f {} \; 2> /dev/null
 chown -R ${UID}:${GID} ${DATA_DIR}
 
 # FreeFileSync to save config
-ln -s ${DATA_DIR}/ /home/${USER}
+ln -sf ${DATA_DIR}/ /home/${USER}
 chown -R ${UID}:${GID} /home/${USER}
 
 term_handler() {
